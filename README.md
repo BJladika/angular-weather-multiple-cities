@@ -1,5 +1,9 @@
 # AngularWeatherMultipleCities
 
+![alt text](https://imgur.com/yriCXKn)
+
+![alt text](https://imgur.com/aj7rKcb)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
 ## Development server
