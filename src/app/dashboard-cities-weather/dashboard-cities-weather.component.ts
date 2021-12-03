@@ -28,7 +28,8 @@ export class DashboardCitiesWeatherComponent implements OnInit {
       //Технически можно обмануть, введя название города на английском
       if (this.cities.filter((cities) => cities.name === name).length == 0)
         this.cityWeatherService.getCityByName(name).subscribe((new_city) => {
-          this.cityManageService.addCity(new_city);
+          if (new_city == undefined) alert('Извините, город не найден.');
+          else this.cityManageService.addCity(new_city);
         });
       else alert('Данный город уже у вас в списке.');
     }
