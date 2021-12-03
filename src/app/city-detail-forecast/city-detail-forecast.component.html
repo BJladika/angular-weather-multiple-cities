@@ -1,88 +1,107 @@
 <div
-    style="
-        align-content: center;
-        justify-content: center;
-        text-align: center;
-        
-    "
-    *ngIf="city"
+    fxLayout="column"
+    style="background-color: aliceblue; border-radius: 20px; padding: 10px"
 >
-    <h2>{{ city.name | uppercase }} </h2>
-    <div><span>id: </span>{{ city.id }}</div>
-    <div><span>temp: </span>{{ city.main.temp  }} °C</div>
-    <div><span>feels_like: </span>{{ city.main.feels_like }} °C</div>
-    <div><span>city_name: </span>{{ city.name }}</div>
-    <button (click)="goBack()">go back</button>
-
-</div>
-
-<div *ngIf="forecast" class="heroes-menu">
-    <a
-        *ngFor="let item of forecast.list"
-        fxLayout="column"
+    <button (click)="goBack()" style="position: absolute">Назад</button>
+    <div
         style="
-            background-color: gainsboro;
-            height: 300px;
-            width: 150px;
-            min-width: 100px;
-            align-self: auto;
-            box-sizing: border-box;
-            display: inline-block;
-            padding: 10px;
-            margin: 10px;
-            border-radius: 20px;
-            opacity: 75%;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
         "
+        *ngIf="city"
     >
-        <div
+        <h2>{{ city.name | uppercase }}</h2>
+        <div><span>id: </span>{{ city.id }}</div>
+        <div><span>temp: </span>{{ city.main.temp }} °C</div>
+        <div><span>feels_like: </span>{{ city.main.feels_like }} °C</div>
+        <div><span>city_name: </span>{{ city.name }}</div>
+    </div>
+
+    <div *ngIf="forecast" class="heroes-menu">
+        <a
+            *ngFor="let item of forecast.list"
             fxLayout="column"
-            fxFlex="25%"
-            style="background-color: none; opacity: 100%"
+            style="
+                background-color: gainsboro;
+                height: 100%;
+                width: 150px;
+                min-height: 250px;
+                min-width: 100px;
+                align-self: auto;
+                box-sizing: border-box;
+                display: inline-block;
+                padding: 10px;
+                margin: 10px;
+                border-radius: 20px;
+                opacity: 75%;
+            "
         >
             <div
-                fxFlex="1 1 100%"
-                style="background-color: none; opacity: 100%; color: black; font-weight: bold;"
-            >
-                {{ item.dt_txt | date: "mediumDate" }}
-            </div>
-            <div
-                fxFlex="1 1 100%"
+                fxLayout="column"
+                fxFlex="25%"
                 style="background-color: none; opacity: 100%"
             >
-                <img
-                    src="http://openweathermap.org/img/w/{{
-                        item.weather[0].icon
-                    }}.png"
-                    alt="Site Logo"
-                    width="50"
-                    height="50"
-                />
+                <div
+                    fxFlex="1 1 100%"
+                    style="
+                        background-color: none;
+                        opacity: 100%;
+                        color: black;
+                        font-weight: bold;
+                    "
+                >
+                    {{ item.dt_txt | date: "mediumDate" }}
+                </div>
+                <div
+                    fxFlex="1 1 100%"
+                    style="background-color: none; opacity: 100%"
+                >
+                    <img
+                        src="http://openweathermap.org/img/w/{{
+                            item.weather[0].icon
+                        }}.png"
+                        alt="Site Logo"
+                        width="50"
+                        height="50"
+                    />
+                </div>
+                <div
+                    fxFlex="1 1 100%"
+                    style="
+                        background-color: none;
+                        opacity: 100%;
+                        align-self: center;
+                        text-align: center;
+                        color: black;
+                    "
+                >
+                    {{ item.weather[0].description | titlecase }}
+                </div>
+                <div
+                    fxFlex="1 1 100%"
+                    style="
+                        background-color: none;
+                        opacity: 100%;
+                        align-self: center;
+                        text-align: center;
+                        color: black;
+                        margin-top: 10px;
+                    "
+                >
+                    <div fxLayout="row">
+                        <img
+                            src="./assets/images/thermometer.png"
+                            alt="Site Logo"
+                            width="50"
+                            height="50"
+                        />
+                        <div style="text-align: center; align-self: center; margin-left: 10px;">
+                            {{ item.main.temp }} °C
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div
-                fxFlex="1 1 100%"
-                style="
-                    background-color: none;
-                    opacity: 100%;
-                    align-self: center;
-                    text-align: center;
-                    color: black;
-                "
-            >
-                {{ item.weather[0].description | titlecase }}
-            </div>
-            <div
-                fxFlex="1 1 100%"
-                style="
-                    background-color: none;
-                    opacity: 100%;
-                    align-self: center;
-                    text-align: center;
-                    color: black;
-                    margin-top: 10px;
-                "
-            >
-                {{ item.main.temp }} °C
-            </div>
-        </div>
-    </a>
+        </a>
+    </div>
 </div>
