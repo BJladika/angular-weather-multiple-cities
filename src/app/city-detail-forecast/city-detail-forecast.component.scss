@@ -1,0 +1,167 @@
+/* HeroesComponent's private CSS styles */
+.heroes {
+    margin: 0 0 0 0;
+    list-style-type: none;
+    padding: 0;
+    width: 300px;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    box-sizing: border-box;
+}
+ul {
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+    gap: 4px;
+
+    > li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.heroes li:hover {
+    left: 0.1em;
+}
+
+.heroes a {
+    color: #333;
+    text-decoration: none;
+    background-color: #eee;
+    margin: 0.5em;
+    padding: 0.3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.heroes a:hover {
+    color: #2c3a41;
+    background-color: #e6e6e6;
+}
+
+.heroes a:active {
+    background-color: #525252;
+    color: #fafafa;
+}
+
+.heroes .badge {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #405061;
+    line-height: 1em;
+    position: relative;
+    top: -4px;
+    height: 3.6em;
+    min-width: 16px;
+    text-align: center;
+    margin-right: 0;
+    border-radius: 4px;
+    justify-content: center;
+}
+
+.add-button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.add-button:hover {
+    color: white;
+    background-color: #42545c;
+}
+
+button.delete {
+    position: absolute;
+    left: 210px;
+    top: 5px;
+    background-color: white;
+    color: #525252;
+    font-size: 1.1rem;
+    padding: 1px 10px 3px 10px;
+}
+
+button.delete:hover {
+    background-color: #525252;
+    color: white;
+}
+
+h2 {
+    align-self: center;
+}
+
+/* DashboardComponent's private CSS styles */
+
+h2 {
+    text-align: center;
+  }
+  
+  .heroes-menu {
+    padding: 0;
+    margin: auto;
+    min-width: 400px;
+    max-width: 1000px;
+    height: 100%;
+  
+    /* flexbox */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-content: flex-start;
+    align-items: flex-start;
+    place-content: center ;
+  }
+  
+  a {
+    background-color: #3f525c;
+    border-radius: 2px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    min-width: 300px;
+    margin: .5rem auto;
+    box-sizing: border-box;
+  
+    /* flexbox */
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+  }
+  
+  @media (min-width: 600px) {
+    a {
+      width: 18%;
+      box-sizing: content-box;
+    }
+  }
+  
+  a:hover {
+    background-color: #000;
+  }
